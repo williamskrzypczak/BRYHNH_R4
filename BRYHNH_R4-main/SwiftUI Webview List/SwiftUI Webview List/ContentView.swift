@@ -141,3 +141,9 @@ struct WebView: UIViewRepresentable {
         uiView.loadHTMLString(htmlContent, baseURL: nil)
     }
 }
+
+struct ContentView1: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
