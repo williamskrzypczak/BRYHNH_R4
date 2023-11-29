@@ -7,8 +7,13 @@
 
 import SwiftUI
 import WebKit
+import AVKit
 
-
+//---------------------------------------------]
+//
+// Setup the main Content View
+//
+//---------------------------------------------]
 
 struct ContentView: View {
     @State private var items: [RSSItem] = []
@@ -45,7 +50,11 @@ struct ContentView: View {
     }
 
     
-    
+//---------------------------------------------------]
+//
+// Grab the stuff I need from the RSS feed
+//
+//---------------------------------------------------]
 
     func fetchRSSFeed() {
         if let url = URL(string: "https://www.bestradioyouhaveneverheard.com/podcasts/index.xml") {
@@ -83,6 +92,7 @@ struct RSSItem: Identifiable {
     let id = UUID()
     var title: String
     var htmlContent: String
+    var mp3URL: URL?
 }
 
 class RSSParserDelegate: NSObject, XMLParserDelegate {
